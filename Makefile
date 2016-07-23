@@ -74,8 +74,8 @@ create:
 	$(eval DATA :=key=$(API_KEY)&login=$(API_USERNAME)&action=reset)
 	echo -n "curl -X POST $(URL) " >> $(TMP)/working.sh ; \
 	echo -n '-H "Authorization: $(API_KEY)" ' >> $(TMP)/working.sh ; \
-	echo -n '-H "Content-Type: application/json"' >> $(TMP)/working.sh ; \
-	echo -n '-d "{\"name\":\"www1\",\"codelet\":\"$(CODELETID)\"}"' >> $(TMP)/working.sh ; \
+	echo -n '-H "Content-Type: application/json" ' >> $(TMP)/working.sh ; \
+	echo -n '-d "{\"name\":\"www1\",\"codelet\":\"$(CODELETID)\"}" ' >> $(TMP)/working.sh ; \
 	echo -n '-m 30 ' >> $(TMP)/working.sh ; \
 	echo "-v > $(TMP)/jobby" >> $(TMP)/working.sh ; \
 	bash $(TMP)/working.sh
